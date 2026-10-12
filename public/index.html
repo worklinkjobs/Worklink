@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worklink</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Worklink</p>
+          <h1>Job dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <span id="currentUser" class="user-badge hidden"></span>
+          <button id="logoutButton" class="secondary hidden">Log out</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="loginPanel" class="panel auth-panel">
+          <h2>Sign in</h2>
+          <form id="loginForm">
+            <label>
+              Username
+              <input name="username" value="admin" required />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" value="admin" required />
+            </label>
+            <button type="submit">Log in</button>
+          </form>
+        </section>
+
+        <section id="appPanel" class="hidden">
+          <div id="createJobPanel" class="panel">
+            <h2>Create a job</h2>
+            <p id="roleNotice" class="role-notice hidden">You are signed in as a member, so you can view jobs but cannot create or edit them.</p>
+            <form id="jobForm" class="job-form">
+              <label>
+                Title
+                <input name="title" required />
+              </label>
+              <label>
+                Description
+                <textarea name="description" rows="3"></textarea>
+              </label>
+              <div class="inline-fields">
+                <label>
+                  Status
+                  <select name="status">
+                    <option value="queued">Queued</option>
+                    <option value="in_progress">In progress</option>
+                    <option value="done">Done</option>
+                    <option value="blocked">Blocked</option>
+                  </select>
+                </label>
+                <label>
+                  Priority
+                  <select name="priority">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                Assignee
+                <input name="assignee" />
+              </label>
+              <button type="submit">Add job</button>
+            </form>
+          </div>
+
+          <div class="panel">
+            <h2>Jobs</h2>
+            <div id="jobList" class="job-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

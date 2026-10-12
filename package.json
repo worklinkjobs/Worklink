@@ -1,0 +1,29 @@
+{
+  "name": "worklink",
+  "version": "1.0.0",
+  "description": "A minimal Worklink backend starter",
+  "main": "src/server.js",
+  "scripts": {
+    p"start": "node src/server.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/worklinkjobs/Worklink.git"
+  },
+  "keywords": [
+    "worklink",
+    "node",
+    "starter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/worklinkjobs/Worklink/issues"
+  },
+  "homepage": "https://github.com/worklinkjobs/Worklink#readme",
+  "directories": {
+    "test": "test"
+  }
+}

@@ -1,0 +1,204 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f5f8;
+  --panel: #ffffff;
+  --panel-muted: #eef2ff;
+  --text: #14213d;
+  --text-soft: #455774;
+  --accent: #4f46e5;
+  --accent-dark: #312e81;
+  --border: #dfe4ee;
+  --success: #15803d;
+  --warning: #c2410c;
+  --danger: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1, h2 {
+  margin: 0 0 12px;
+}
+
+main {
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(20, 33, 61, 0.04);
+}
+
+.auth-panel {
+  max-width: 420px;
+}
+
+#loginForm,
+.job-form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px 12px;
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 11px 16px;
+  background: var(--accent);
+  color: white;
+}
+
+button.secondary {
+  background: #e2e8f0;
+  color: var(--text);
+}
+
+.inline-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.job-list {
+  display: grid;
+  gap: 14px;
+}
+
+.job-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9faff 100%);
+  padding: 16px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--panel-muted);
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.role-notice {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge.status-queued { background: #e0f2fe; color: #0f766e; }
+.badge.status-in_progress { background: #fef3c7; color: #92400e; }
+.badge.status-done { background: #dcfce7; color: var(--success); }
+.badge.status-blocked { background: #fee2e2; color: var(--danger); }
+.badge.priority-low { background: #e2e8f0; color: #334155; }
+.badge.priority-medium { background: #ede9fe; color: var(--accent-dark); }
+.badge.priority-high { background: #fee2e2; color: var(--danger); }
+
+.hidden { display: none !important; }
+
+@media (max-width: 700px) {
+  .topbar {
+    display: grid;
+    gap: 12px;
+  }
+
+  .inline-fields {
+    grid-template-columns: 1fr;
+  }
+}
